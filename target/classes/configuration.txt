@@ -1,0 +1,2 @@
+hepl.genielogiciel.metrics.WeigthedMethodRule:3
+hepl.genielogiciel.metrics.AFTD:2
