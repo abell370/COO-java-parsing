@@ -14,6 +14,6 @@ public class ATFD extends Metric {
 
     @Override
     public String applyTheRule() {
-        return "";
+        return this.getClass().getName() + "\nNONE";
     }
 }
