@@ -22,10 +22,10 @@ public class ATFD extends Metric {
 
     @Override
     public String applyTheRule() {
-        StringBuilder result = new StringBuilder(this.getClass().getName() + "\n");
+        StringBuilder result = new StringBuilder("\n"+this.getClass().getName()+" => ");
         var keys = wmcMap.keySet();
         for(String key : keys) {
-            String tmp = wmcMap.get(key) >= super.getThreshold() ? key + " is not conform" : key + " is conform";
+            String tmp = wmcMap.get(key) >= super.getThreshold() ? key + " is not conform " : key + " is conform ";
             result.append(tmp);
         }
         return result.toString();

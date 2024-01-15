@@ -2,10 +2,7 @@ package hepl.genielogiciel.visitor;
 
 import hepl.genielogiciel.Java8BaseVisitor;
 import hepl.genielogiciel.Java8Parser;
-import hepl.genielogiciel.metrics.GenericCollector;
-import hepl.genielogiciel.metrics.WeigthedMethodRule;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class WeigthedMethodCountVisitor extends Java8BaseVisitor<Void> {

@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        /*
+
         String projectPath = "src/main/resources/project";
         String path = "src/main/resources/configuration.txt";
 
@@ -25,25 +25,6 @@ public class Main {
         FileVisitor<Path> fileVisitor = new ProjectLoader(loader.getMetricsMap());
 
         Files.walkFileTree(Paths.get(projectPath), fileVisitor);
-        */
-        String javaClassContent = "public class ExampleClass {\n" +
-                "    public String publicField;\n" +
-                "}\n" +
-                "\n" +
-                "class AnotherClass {\n" +
-                "    private int privateField;\n" +
-                "    public double externalField;\n" +
-                "}";
-
-        Java8Lexer java8Lexer = new Java8Lexer(CharStreams.fromString(javaClassContent));
-        CommonTokenStream tokens = new CommonTokenStream(java8Lexer);
-        Java8Parser parser = new Java8Parser(tokens);
-        ParseTree tree = parser.compilationUnit();
-        AccesstoForeignDataVisitor visitor = new AccesstoForeignDataVisitor(new HashMap<>());
-        visitor.visit(tree);
-        for (Map.Entry<String, Integer> entry : visitor.getData().entrySet()) {
-            System.out.println("Classe : " + entry.getKey() + ", Nombre d'attributs : " + entry.getValue());
-        }
 
     }
 }
